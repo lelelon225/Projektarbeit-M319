@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/T7/Arbeit:Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj": {}
+    "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj": {}
   },
   "projects": {
-    "/Volumes/T7/Arbeit:Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj": {
+    "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/T7/Arbeit:Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj",
+        "projectUniqueName": "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj",
         "projectName": "Projektarbeit-M319",
-        "projectPath": "/Volumes/T7/Arbeit:Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj",
+        "projectPath": "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj",
         "packagesPath": "/Users/lele/.nuget/packages/",
-        "outputPath": "/Volumes/T7/Arbeit:Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/",
+        "outputPath": "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/lele/.nuget/NuGet/NuGet.Config"

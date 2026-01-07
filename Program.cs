@@ -2,7 +2,7 @@
 {
     public static void Main(string[] args)
     {
-        Menu.mainMenu();
+        Menu.MainMenu();
 
     }
 }

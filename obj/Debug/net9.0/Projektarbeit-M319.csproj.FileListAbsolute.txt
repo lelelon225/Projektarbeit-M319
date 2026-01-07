@@ -1,0 +1,15 @@
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.AssemblyInfoInputs.cache
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.AssemblyInfo.cs
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.csproj.CoreCompileInputs.cache
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.sourcelink.json
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/bin/Debug/net9.0/Projektarbeit-M319
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/bin/Debug/net9.0/Projektarbeit-M319.deps.json
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/bin/Debug/net9.0/Projektarbeit-M319.runtimeconfig.json
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/bin/Debug/net9.0/Projektarbeit-M319.dll
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/bin/Debug/net9.0/Projektarbeit-M319.pdb
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.dll
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/refint/Projektarbeit-M319.dll
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.pdb
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/Projektarbeit-M319.genruntimeconfig.cache
+/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/obj/Debug/net9.0/ref/Projektarbeit-M319.dll
