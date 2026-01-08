@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projektarbeit-M319")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d39b8130942f033557cd54eb2ae794c7d37f0cee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dc4ad6d7073ffbd577a610d00c89c774543bd81")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projektarbeit-M319")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projektarbeit-M319")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
