@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mrsacR4rBOM=",
+  "dgSpecHash": "0IRbPh0Jy2I=",
   "success": true,
   "projectFilePath": "/Volumes/T7/Arbeit-Schule/Gibb/Unterricht Engler/Modul 319/Projektarbeit-M319/Projektarbeit-M319.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/lele/.nuget/packages/microsoft.netcore.app.runtime.osx-x64/9.0.10/microsoft.netcore.app.runtime.osx-x64.9.0.10.nupkg.sha512",
+    "/Users/lele/.nuget/packages/microsoft.aspnetcore.app.runtime.osx-x64/9.0.10/microsoft.aspnetcore.app.runtime.osx-x64.9.0.10.nupkg.sha512",
+    "/Users/lele/.nuget/packages/microsoft.netcore.app.host.osx-x64/9.0.10/microsoft.netcore.app.host.osx-x64.9.0.10.nupkg.sha512"
+  ],
   "logs": []
 }
