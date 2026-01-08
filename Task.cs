@@ -2,40 +2,35 @@ using System;
 
 public class Task
 {
+    private int id;
+    private string taskName;
+    private bool done;
 
-    public Task()
+    public Task(int id, string taskName)
     {
-        HashSet<int> taskIds = new HashSet<int>();
-        Random random = new Random();
-        int newId;
-        do
-        {
-            newId = random.Next(1, 10000); // Generate random ID between
-            } while (taskIds.Contains(newId));
-
-        }
-    public void AddTask()
-    {
-        Console.WriteLine("Funktion zum Hinzufügen einer Aufgabe wird aufgerufen.");
-        
-
-    }   
-    public void ViewTasks()
-    {
-        Console.WriteLine("Funktion zum Anzeigen der Aufgaben wird aufgerufen.");
-    }
-    public void MarkTaskAsCompleted()
-    {
-        Console.WriteLine("Funktion zum Markieren einer Aufgabe als erledigt wird aufgerufen.");    
+        this.id = id;
+        this.taskName = taskName;
+        this.done = false;
     }
 
-    public void DeleteTask()
+    public int getId()
     {
-        Console.WriteLine("Funktion zum Löschen einer Aufgabe wird aufgerufen.");
+        return id;
     }
-    public void SortTasksByPriority()
+
+    public string getTask()
     {
-        Console.WriteLine("Funktion zum Sortieren der Aufgaben nach Priorität wird aufgerufen.");   
+        return taskName;
+    }
+
+    public bool isDone()
+    {
+        return done;
+    }
+
+    public void setDone(bool value)
+    {
+        done = value;
     }
 
 }
