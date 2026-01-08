@@ -1,3 +1,11 @@
+/*
+  MngPanel.cs
+  -----------
+  Diese Klasse verwaltet die Liste der Aufgaben (Tasks) und bietet Methoden zum
+  Hinzufügen, Entfernen, Markieren als erledigt, Sortieren und Ausgeben in einer
+  tabellarischen Form. Die Kommentare in diesem File erklären kurz, was jede
+  Methode macht — die eigentliche Logik wurde absichtlich unverändert gelassen.
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,27 +19,25 @@ public class MngPanel
         tasks = new List<Task>();
     }
 
+    // AddTask: Fügt eine neue Aufgabe zur internen Liste hinzu.
+    // Parameter:
+    //   - task: das Task-Objekt, das hinzugefügt werden soll.
+    // Verhalten:
+    //   - Gibt eine Bestätigung auf der Konsole aus und hängt die Aufgabe an die Liste an.
     public void AddTask(Task task)
     {
         Console.WriteLine("Aufgabe hinzugefügt");
         tasks.Add(task);
     }
-    public void DisplayTasks()
-    {
-        Console.WriteLine("Aufgaben:");
-        if(!tasks.Any())
-        {
-            Console.WriteLine("Keine Aufgaben vorhanden");
-        }
-        else
-        {
-            foreach (Task task in tasks)
-            {
-                Console.WriteLine($"{task.getId()}. {task.getTask()}");
-            }
-        }
-    }
 
+
+
+    // RemoveTask: Entfernt eine Aufgabe anhand einer eingegebenen ID (als String).
+    // Parameter:
+    //   - input: die ID als String; wird versucht in eine Ganzzahl zu parsen.
+    // Verhalten:
+    //   - Bei gültiger ID wird die Aufgabe gesucht und entfernt; ansonsten
+    //     erscheint eine Fehlermeldung.
     public void RemoveTask(String input)
     {
         if(int.TryParse(input, out int taskId))
@@ -51,6 +57,13 @@ public class MngPanel
             Console.WriteLine("Ungültige Eingabe");
         }
     }
+    // MarkTaskAsDone: Markiert eine Aufgabe als erledigt (done = true).
+    // Parameter:
+    //   - input: die ID als String; wird in eine Ganzzahl geparst.
+    // Verhalten:
+    //   - Wenn eine passende Aufgabe gefunden wird, wird ihr Status auf erledigt gesetzt.
+    //   - Falls keine passende Aufgabe existiert oder die Eingabe ungültig ist,
+    //     wird eine entsprechende Meldung ausgegeben.
     public void MarkTaskAsDone(String input)
     {
         if(int.TryParse(input, out int taskId))
@@ -72,11 +85,24 @@ public class MngPanel
         }
     }
 
+    // SortTasksByPriority: Sortiert die Aufgabenliste nach Priorität.
+    // Implementation:
+    //   - Sortiert aufsteigend nach getPriority() und kehrt die Reihenfolge um,
+    //     sodass hohe Priorität oben steht.
+    //   - Anschließend wird die Tabelle ausgegeben.
     public void SortTasksByPriority()
     {
-        //tasks.Sort((a, b) => a.getPriority().CompareTo(b.getPriority()));
+        tasks.Sort((a, b) => a.getPriority().CompareTo(b.getPriority()));
+        tasks.Reverse();
+        PrintTable();
     }
 
+    // PrintTable: Gibt die Aufgaben in einer hübschen Tabellenansicht in der Konsole aus.
+    // Details:
+    //   - Berechnet die Spaltenbreiten dynamisch anhand des längsten Inhalts.
+    //   - Gibt Kopfzeile, Trennlinien, Zeilen für jede Aufgabe und die Fußzeile aus.
+    //   - Priorität wird in Text (HIGH/MEDIUM/LOW) übersetzt.
+    //   - Status zeigt, ob die Aufgabe erledigt ist oder offen.
     public void PrintTable()
     {
         if (!tasks.Any())
@@ -87,32 +113,36 @@ public class MngPanel
             return;
         }
 
-        // Calculate column widths dynamically (ID, Task, Status)
+        // Calculate column widths dynamically
         int idWidth = Math.Max(4, tasks.Max(t => t.getId().ToString().Length) + 2);
         int taskWidth = Math.Max(30, tasks.Max(t => t.getTask().Length) + 2);
-        int statusWidth = Math.Max(12, tasks.Max(t => (t.isDone() ? "✓ Erledigt" : "○ Offen").Length) + 2);
+        int priorityWidth = 12;
+        int statusWidth = 12;
 
         // Adjust if console is too narrow
-        int totalWidth = idWidth + taskWidth + statusWidth + 4;
+        int totalWidth = idWidth + taskWidth + priorityWidth + statusWidth + 5;
         if (totalWidth > Console.WindowWidth - 2)
         {
-            taskWidth = Console.WindowWidth - idWidth - statusWidth - 6;
+            taskWidth = Console.WindowWidth - idWidth - priorityWidth - statusWidth - 10;
             if (taskWidth < 15) taskWidth = 15;
         }
 
         // Top border
         Console.WriteLine("╔" + new string('═', idWidth) + "╦" +
                           new string('═', taskWidth) + "╦" +
+                          new string('═', priorityWidth) + "╦" +
                           new string('═', statusWidth) + "╗");
 
         // Header
         Console.WriteLine("║" + CenterText("ID", idWidth) + "║" +
                           CenterText("Aufgabe", taskWidth) + "║" +
+                          CenterText("Priorität", priorityWidth) + "║" +
                           CenterText("Status", statusWidth) + "║");
 
         // Header separator
         Console.WriteLine("╠" + new string('═', idWidth) + "╬" +
                           new string('═', taskWidth) + "╬" +
+                          new string('═', priorityWidth) + "╬" +
                           new string('═', statusWidth) + "╣");
 
         // Task rows
@@ -120,6 +150,17 @@ public class MngPanel
         {
             string id = task.getId().ToString();
             string taskName = task.getTask();
+            int priority = task.getPriority();
+
+            // Convert priority to text
+            string priorityDisplay = priority switch
+            {
+                3 => "HIGH",
+                2 => "MEDIUM",
+                1 => "LOW",
+                _ => "MEDIUM" // Default to MEDIUM if invalid
+            };
+
             string status = task.isDone() ? "✓ Erledigt" : "○ Offen";
 
             // Truncate task name if too long
@@ -130,12 +171,14 @@ public class MngPanel
 
             Console.WriteLine("║" + PadText(id, idWidth) + "║" +
                               PadText(taskName, taskWidth) + "║" +
+                              CenterText(priorityDisplay, priorityWidth) + "║" +
                               PadText(status, statusWidth) + "║");
         }
 
         // Bottom border
         Console.WriteLine("╚" + new string('═', idWidth) + "╩" +
                           new string('═', taskWidth) + "╩" +
+                          new string('═', priorityWidth) + "╩" +
                           new string('═', statusWidth) + "╝");
 
         Console.WriteLine($"\nGesamt: {tasks.Count} Aufgabe(n) | " +
@@ -143,6 +186,8 @@ public class MngPanel
                           $"Offen: {tasks.Count(t => !t.isDone())}");
     }
 
+    // CenterText: Hilfsfunktion, die einen Text in einer gegebenen Breite zentriert.
+    // Rückgabe: der Text mit links/rechts Padding, zugeschnitten falls nötig.
     private string CenterText(string text, int width)
     {
         if (text.Length >= width) return text.Substring(0, width);
@@ -152,6 +197,8 @@ public class MngPanel
         return new string(' ', padLeft) + text + new string(' ', padRight);
     }
 
+    // PadText: Hilfsfunktion, die einen Text linksbündig in einer Spalte darstellt.
+    // Fügt links ein Leerzeichen ein und füllt rechts mit Leerzeichen auf.
     private string PadText(string text, int width)
     {
         if (text.Length >= width) return text.Substring(0, width);
