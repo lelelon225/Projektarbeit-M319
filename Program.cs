@@ -2,7 +2,9 @@
 {
     public static void Main(string[] args)
     {
-        Menu.MainMenu();
-
+        bool running = true;
+        while (running){
+            running = Menu.MainMenu();
+        }
     }
 }

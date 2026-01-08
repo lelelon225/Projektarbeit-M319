@@ -3,22 +3,26 @@ using System.Linq.Expressions;
 
 public class Menu
 {
-    public static bool MainMenu()
+    public static bool MainMenu() // Main Menu Loop
     {
-        bool running = true;
+        bool running = true; 
         while (running)
         {
             Menu.DisplayMenu();
             String choice = Console.ReadLine();
 
-            if (!int.TryParse(choice, out int numericChoice))
+            Console.Clear(); // Clear Console for better readability
+            Console.WriteLine();
+            Console.WriteLine();
+
+            if (!int.TryParse(choice, out int numericChoice)) // Input Validation
             {
                 Console.WriteLine("Ungültige Eingabe, bitte eine Zahl eingeben.");
                 continue;
             }
 
 
-            switch (numericChoice)
+            switch (numericChoice) // Menu Options 
             {
                 case 1:
                     Console.WriteLine("Aufgabe 1 ausgewählt");
@@ -43,9 +47,10 @@ public class Menu
                     return true;
             }
         }
+        return false;
     }
 
-    public static void DisplayMenu()
+    public static void DisplayMenu() // Menu Display
     {
         Console.WriteLine("1.--Aufgabe hinzufügen--");
         Console.WriteLine("2.--Aufgabe anzeigen--");
